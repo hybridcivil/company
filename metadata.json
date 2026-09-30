@@ -1,0 +1,6 @@
+{
+  "name": "Hybrid Civil - Engineering & Consultancy Management System",
+  "description": "Comprehensive project, client, file revision, engineering soil investigation, and accounting management system for Hybrid Civil Engineering & Consultancy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
