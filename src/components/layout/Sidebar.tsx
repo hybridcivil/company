@@ -57,6 +57,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
       badgeColor: 'bg-orange-500 text-white',
     },
     { id: 'soilTest', label: 'Soil Investigation & SPT', icon: Layers },
+    {
+      id: 'staircase',
+      label: 'Staircase Estimate (RCC)',
+      icon: Calculator,
+      badge: 'Formula',
+      badgeColor: 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
+    },
     { id: 'team', label: 'Engineers & Staff Payroll', icon: HardHat },
     { id: 'contractors', label: 'Contractors & Referrers', icon: Briefcase },
     { id: 'commitments', label: 'Payment Commitments', icon: CreditCard },
@@ -153,14 +160,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
                 onClick={() => handleSelectTab(item.id)}
                 className={`group flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-xs font-semibold transition-all ${
                   isActive
-                    ? 'bg-orange-600 text-white shadow-md shadow-orange-600/20'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-[#14263D] text-cyan-300 border border-cyan-500/40 shadow-sm shadow-cyan-950/60'
+                    : 'text-slate-300 hover:bg-slate-800/80 hover:text-white border border-transparent'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Icon
                     className={`h-4 w-4 shrink-0 transition-colors ${
-                      isActive ? 'text-white' : 'text-slate-400 group-hover:text-orange-400'
+                      isActive ? 'text-cyan-400' : 'text-slate-400 group-hover:text-cyan-400'
                     }`}
                   />
                   <span>{item.label}</span>

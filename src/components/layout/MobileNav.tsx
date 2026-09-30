@@ -23,7 +23,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ onOpenMenu }) => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 flex h-16 items-center justify-around border-t border-slate-200 bg-white/95 px-2 py-1 shadow-lg backdrop-blur-md md:hidden dark:border-slate-800 dark:bg-slate-900/95">
+    <nav className="fixed bottom-0 left-0 right-0 z-40 flex h-16 items-center justify-around border-t border-[#1C2C44] bg-[#0A1220]/95 px-2 py-1 shadow-2xl backdrop-blur-md md:hidden">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = activeTab === tab.id;
@@ -33,8 +33,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ onOpenMenu }) => {
             onClick={() => setActiveTab(tab.id)}
             className={`flex flex-col items-center justify-center py-1 transition-transform active:scale-95 ${
               isActive
-                ? 'text-orange-600 font-bold'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400'
+                ? 'text-cyan-400 font-bold drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]'
+                : 'text-slate-400 hover:text-slate-200'
             }`}
           >
             <Icon className={`h-5 w-5 ${isActive ? 'stroke-[2.5px]' : 'stroke-2'}`} />
@@ -46,12 +46,12 @@ export const MobileNav: React.FC<MobileNavProps> = ({ onOpenMenu }) => {
       {/* More / Menu Drawer Trigger */}
       <button
         onClick={onOpenMenu}
-        className="relative flex flex-col items-center justify-center py-1 text-slate-600 hover:text-slate-900 active:scale-95 dark:text-slate-400"
+        className="relative flex flex-col items-center justify-center py-1 text-slate-400 hover:text-slate-200 active:scale-95"
       >
         <div className="relative">
           <Menu className="h-5 w-5 stroke-2" />
           {unreadNotificationsCount > 0 && (
-            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5 rounded-full bg-orange-600" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
           )}
         </div>
         <span className="text-[11px] leading-tight mt-0.5">More</span>

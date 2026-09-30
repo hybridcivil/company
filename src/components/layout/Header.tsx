@@ -43,12 +43,15 @@ export const Header: React.FC<HeaderProps> = ({
   const isSuperAdmin = currentUser.role === 'Super Admin';
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-slate-800 bg-[#0F172A] px-4 text-white shadow-md sm:px-6">
+    <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-[#1A2A40] bg-[#0A1220] px-4 text-white shadow-lg sm:px-6 relative">
+      {/* Top Hairline Amber Accent matching Screenshot */}
+      <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+
       {/* Left: Mobile hamburger & Brand */}
       <div className="flex items-center gap-3">
         <button
           onClick={onToggleSidebarMobile}
-          className="rounded-lg p-2 text-slate-300 hover:bg-slate-800 focus:outline-none md:hidden"
+          className="rounded-lg p-2 text-slate-300 hover:bg-[#142338] focus:outline-none md:hidden"
           title="Open Menu"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => setActiveTab('dashboard')}
           className="flex cursor-pointer items-center gap-2.5 transition-opacity hover:opacity-90"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 font-extrabold text-white shadow-sm shadow-orange-500/30">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 font-extrabold text-slate-950 shadow-sm shadow-cyan-500/40">
             HC
           </div>
           <div>
@@ -69,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="text-sm font-extrabold tracking-wider text-white sm:text-base">
                 HYBRID CIVIL
               </span>
-              <span className="hidden rounded bg-orange-500/20 px-1.5 py-0.2 text-[10px] font-semibold text-orange-400 sm:inline-block">
+              <span className="hidden rounded bg-cyan-500/20 px-1.5 py-0.2 text-[10px] font-semibold text-cyan-300 sm:inline-block border border-cyan-500/30">
                 SYSTEM
               </span>
             </div>
@@ -84,13 +87,13 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="mx-2 max-w-md flex-1 px-2 md:mx-6 md:px-0">
         <button
           onClick={() => setIsGlobalSearchOpen(true)}
-          className="group flex w-full items-center justify-between rounded-lg border border-slate-700 bg-slate-800/80 px-3 py-1.5 text-xs text-slate-400 shadow-inner transition hover:border-slate-600 hover:bg-slate-800 sm:px-4 sm:py-2 sm:text-sm"
+          className="group flex w-full items-center justify-between rounded-lg border border-[#1E334F] bg-[#122034] px-3 py-1.5 text-xs text-slate-300 shadow-inner transition hover:border-cyan-500/60 hover:bg-[#15253D] sm:px-4 sm:py-2 sm:text-sm"
         >
           <span className="flex items-center gap-2 overflow-hidden truncate">
-            <Search className="h-4 w-4 shrink-0 text-slate-400 group-hover:text-orange-400" />
-            <span className="truncate">Search Client, Project, Drawing, Soil, Bill...</span>
+            <Search className="h-4 w-4 shrink-0 text-cyan-400 group-hover:text-cyan-300" />
+            <span className="truncate text-slate-300">Search Client, Project, Drawing, Soil, Bill...</span>
           </span>
-          <kbd className="hidden shrink-0 rounded border border-slate-600 bg-slate-900 px-1.5 py-0.5 text-[10px] font-mono text-slate-400 sm:inline-block">
+          <kbd className="hidden shrink-0 rounded border border-slate-700 bg-slate-900 px-1.5 py-0.5 text-[10px] font-mono text-cyan-400 sm:inline-block">
             ⌘K
           </kbd>
         </button>
@@ -101,10 +104,10 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Quick Add Button */}
         <button
           onClick={onOpenQuickAdd}
-          className="flex items-center gap-1 rounded-lg bg-orange-600 px-2.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-orange-500 active:scale-95 sm:px-3 sm:text-sm"
+          className="flex items-center gap-1 rounded-lg bg-[#00c2cb] px-2.5 py-1.5 text-xs font-bold text-slate-950 shadow-md shadow-cyan-950/40 hover:bg-[#00adb5] active:scale-95 sm:px-3 sm:text-sm transition"
           title="Create New Project, Client, Bill, etc."
         >
-          <Plus className="h-4 w-4" />
+          <Plus className="h-4 w-4 text-slate-950" />
           <span className="hidden sm:inline">New Action</span>
         </button>
 

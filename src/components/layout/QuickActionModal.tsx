@@ -75,6 +75,13 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
       icon: Layers,
       color: 'bg-teal-500/20 text-teal-400 border-teal-500/30',
     },
+    {
+      key: 'staircase',
+      label: 'Staircase Estimate (RCC)',
+      desc: 'Calculate Concrete, Rebar & Material Cost instantly',
+      icon: Layers,
+      color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+    },
   ];
 
   return (

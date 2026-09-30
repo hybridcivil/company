@@ -24,6 +24,7 @@ import { AuditLogViewer } from './components/audit/AuditLogViewer';
 import { CompanySettingsModal } from './components/company/CompanySettingsModal';
 import { BackupManager } from './components/backup/BackupManager';
 import { SuperAdminCompanyManager } from './components/company/SuperAdminCompanyManager';
+import { StaircaseEstimator } from './components/tools/StaircaseEstimator';
 
 const MainLayout: React.FC = () => {
   const { activeTab, setActiveTab, currentUser } = useApp();
@@ -55,6 +56,9 @@ const MainLayout: React.FC = () => {
       case 'new-soil-test':
         setActiveTab('soilTest');
         break;
+      case 'staircase':
+        setActiveTab('staircase');
+        break;
       default:
         break;
     }
@@ -74,6 +78,8 @@ const MainLayout: React.FC = () => {
         return <FileManager />;
       case 'soilTest':
         return <SoilTestManager />;
+      case 'staircase':
+        return <StaircaseEstimator />;
       case 'team':
         return <TeamManager />;
       case 'contractors':
@@ -100,7 +106,7 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col font-sans text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen bg-[#080E1A] flex flex-col font-sans text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
       {/* Top Header */}
       <Header
         onOpenQuickAdd={() => setIsQuickActionOpen(true)}
